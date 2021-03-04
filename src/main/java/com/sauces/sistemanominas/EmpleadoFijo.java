@@ -13,6 +13,12 @@ public class EmpleadoFijo extends Empleado{
 
         private float salario;
 
+    /**
+     *
+     * @param dni
+     * @param nombre
+     * @param salario
+     */
     public EmpleadoFijo(String dni, String nombre, float salario) {
         super(dni, nombre);
         this.salario = salario;
@@ -37,14 +43,19 @@ public class EmpleadoFijo extends Empleado{
         this.salario = salario;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return super.toString()+", "+salario;
     }
 
-   
-    
-    
+    /**
+     *
+     * @return
+     */
     @Override
     public float ingresos() {
         return salario;

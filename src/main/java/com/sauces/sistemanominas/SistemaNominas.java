@@ -7,7 +7,6 @@ package com.sauces.sistemanominas;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -18,10 +17,18 @@ import java.util.List;
 public class SistemaNominas {
     private List<Empleado> empleados;
 
+    /**
+     *
+     */
     public SistemaNominas() {
         empleados=new ArrayList<>();
     }
     
+    /**
+     * Permite incluir un  Empleado en el sistema de nóminas
+     * @param empleado El empleado que va a ser añadido
+     * @return verdadero si el empleado ha sido añadido, falso en otro caso
+     */
     public boolean incluirEmpleado(Empleado empleado){
         boolean incluido=false;
         
@@ -33,6 +40,11 @@ public class SistemaNominas {
         return incluido;
     }
     
+    /**
+     *
+     * @param dni
+     * @return
+     */
     public Empleado getEmpleado(String dni){
         Empleado empleado=null;
         Iterator<Empleado> iterador=empleados.iterator();
@@ -47,29 +59,42 @@ public class SistemaNominas {
         return null;
     }
     
+    /**
+     *
+     * @param empleado
+     * @return
+     */
     public boolean eliminarEmpleado(Empleado empleado){
         return empleados.remove(empleado);
     }
     
+    /**
+     *
+     * @return
+     */
     public List<Empleado> listarEmpleados(){
-        List<Empleado> listado=new ArrayList<>();
         
-        Collections.copy(empleados, listado);
-        Collections.sort(listado);
+        Collections.sort(empleados);
         
-        return listado;
+        return empleados;
     }
     
+    /**
+     *
+     * @return
+     */
     public List<Empleado> listarEmpleadosPorSueldo(){
-        List<Empleado> listado=new ArrayList<>();
         
-        Collections.copy(empleados, listado);
-        Collections.sort(listado, new ComparadorSueldo());
+        Collections.sort(empleados, new ComparadorSueldo());
         
         
-        return listado;
+        return empleados;
     }
     
+    /**
+     *
+     * @return
+     */
     public float getTotalSalarios(){
         float acumulador=0;
         Iterator<Empleado> iterador=empleados.iterator();

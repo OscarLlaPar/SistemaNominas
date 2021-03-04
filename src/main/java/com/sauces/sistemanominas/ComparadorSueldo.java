@@ -17,6 +17,13 @@ import java.util.Comparator;
  * @author daw1
  */
 public class ComparadorSueldo implements Comparator<Empleado> {
+
+    /**
+     *
+     * @param o1
+     * @param o2
+     * @return
+     */
     public int compare(Empleado o1, Empleado o2){
                 int salida=0;
                 float ingresos1, ingresos2;
