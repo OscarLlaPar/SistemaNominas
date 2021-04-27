@@ -19,9 +19,12 @@ public class EmpleadoFijo extends Empleado{
      * @param nombre
      * @param salario
      */
-    public EmpleadoFijo(String dni, String nombre, float salario) {
+    public EmpleadoFijo(String dni, String nombre, float salario) throws DniException {
         super(dni, nombre);
         this.salario = salario;
+        if(salario<0){
+            throw new IllegalArgumentException("Error en el salario. Debe ser positivo");
+        }
     }
 
         

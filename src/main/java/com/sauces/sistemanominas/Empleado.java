@@ -5,15 +5,18 @@
  */
 package com.sauces.sistemanominas;
 
+import java.io.Serializable;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
  * @author daw1
  */
-public abstract class Empleado implements Comparable<Empleado>{
+public abstract class Empleado implements Comparable<Empleado>, Serializable{
     
-    private String dni;
+    private Dni dni;
 
     private String nombre;
 
@@ -22,8 +25,8 @@ public abstract class Empleado implements Comparable<Empleado>{
      * @param dni
      * @param nombre
      */
-    public Empleado(String dni, String nombre) {
-        this.dni = dni;
+    public Empleado(String dni, String nombre) throws DniException{
+        this.dni = new Dni(dni);
         this.nombre = nombre;
     }
 
@@ -51,7 +54,7 @@ public abstract class Empleado implements Comparable<Empleado>{
      *
      * @return the value of dni
      */
-    public String getDni() {
+    public Dni getDni() {
         return dni;
     }
 
@@ -60,7 +63,7 @@ public abstract class Empleado implements Comparable<Empleado>{
      *
      * @param dni new value of dni
      */
-    public void setDni(String dni) {
+    public void setDni(Dni dni) {
         this.dni = dni;
     }
 
@@ -120,4 +123,6 @@ public abstract class Empleado implements Comparable<Empleado>{
      * @return
      */
     public abstract float ingresos();
+    
+    
 }

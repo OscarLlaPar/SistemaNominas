@@ -16,6 +16,26 @@ import java.util.List;
  */
 public class SistemaNominas {
     private List<Empleado> empleados;
+    private EmpleadoDao empleadoDao;
+
+    /**
+     * Get the value of empleadoDao
+     *
+     * @return the value of empleadoDao
+     */
+    public EmpleadoDao getEmpleadoDao() {
+        return empleadoDao;
+    }
+
+    /**
+     * Set the value of empleadoDao
+     *
+     * @param empleadoDao new value of empleadoDao
+     */
+    public void setEmpleadoDao(EmpleadoDao empleadoDao) {
+        this.empleadoDao = empleadoDao;
+    }
+
 
     /**
      *
@@ -104,5 +124,26 @@ public class SistemaNominas {
         }
         
         return acumulador;
+    }
+    
+    public int guardarEmpleados() throws DaoException{
+        if(empleadoDao!=null){
+            return empleadoDao.insertar(empleados);
+        }
+        return 0;
+    }
+    
+    public int cargarEmpleados() throws DaoException{
+        int n=0;
+        if(empleadoDao!=null){
+            List<Empleado> listado=empleadoDao.listar();
+            for(Empleado e: listado){
+                this.incluirEmpleado(e);
+                if(this.incluirEmpleado(e)){
+                    n++;
+                }
+            }
+        }
+        return n;
     }
 }
