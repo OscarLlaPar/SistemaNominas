@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sauces.sistemanominas;
+package com.sauces.sistemanominas.modelo;
 
 /**
  *
@@ -70,7 +70,7 @@ public class EmpleadoEventual extends Empleado{
      */
     @Override
     public String toString() {
-        return super.toString()+", "+salarioHora+", "+horas;
+        return super.toString()+","+salarioHora+","+horas;
     }
 
     /**

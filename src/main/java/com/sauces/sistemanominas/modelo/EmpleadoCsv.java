@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sauces.sistemanominas;
+package com.sauces.sistemanominas.modelo;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -83,7 +83,7 @@ public class EmpleadoCsv implements EmpleadoDao{
         int n=0;
         try(BufferedWriter fichero=Files.newBufferedWriter(path)){
             for(Empleado e: listado){
-                fichero.write(e.getClass().getSimpleName()+", "+e.toString());
+                fichero.write(e.getClass().getSimpleName()+","+e.toString());
                 fichero.newLine();
                 n++;
             }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sauces.sistemanominas;
+package com.sauces.sistemanominas.modelo;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -18,7 +18,7 @@ public class Dni implements Comparable<Dni>, Serializable {
     private String dni;
     
     public Dni(String dni) throws DniException{
-        if(!Dni.esValido(dni.toString())){
+        if(!Dni.esValido(dni)){
             throw new DniException("DNI incorrecto");
         }
         this.dni=dni;
@@ -67,7 +67,7 @@ public class Dni implements Comparable<Dni>, Serializable {
         int resto;
         String letras="TRWAGMYFPDXBNJZSQVHLCKE";
         char letra;
-        String er="(0-9){8})([A-Z])";
+        String er="([0-9]{8})([A-Z])";
         Pattern p=Pattern.compile(er);
         Matcher m=p.matcher(dni);
         if(m.matches()){

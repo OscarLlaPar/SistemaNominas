@@ -1,5 +1,5 @@
 
-package com.sauces.sistemanominas;
+package com.sauces.sistemanominas.modelo;
 
 import java.util.Comparator;
 

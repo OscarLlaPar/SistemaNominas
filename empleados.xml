@@ -1,0 +1,17 @@
+<list>
+  <com.sauces.sistemanominas.EmpleadoFijo>
+    <dni>
+      <dni>12345678Z</dni>
+    </dni>
+    <nombre>a</nombre>
+    <salario>1.0</salario>
+  </com.sauces.sistemanominas.EmpleadoFijo>
+  <com.sauces.sistemanominas.EmpleadoEventual>
+    <dni>
+      <dni>21742242C</dni>
+    </dni>
+    <nombre>Oscar</nombre>
+    <salarioHora>1.0</salarioHora>
+    <horas>1</horas>
+  </com.sauces.sistemanominas.EmpleadoEventual>
+</list>

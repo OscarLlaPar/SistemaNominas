@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sauces.sistemanominas;
+package com.sauces.sistemanominas.modelo;
 
 /**
  *
@@ -52,7 +52,7 @@ public class EmpleadoFijo extends Empleado{
      */
     @Override
     public String toString() {
-        return super.toString()+", "+salario;
+        return super.toString()+","+salario;
     }
 
     /**

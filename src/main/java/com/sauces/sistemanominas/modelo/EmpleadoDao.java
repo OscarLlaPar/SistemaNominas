@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sauces.sistemanominas;
+package com.sauces.sistemanominas.modelo;
+
+import java.util.List;
 
 /**
  *
  * @author daw1
  */
-public class DaoException extends Exception{
-    public DaoException(String s) {
-        super(s);
-    }
-    
+public interface EmpleadoDao {
+    List<Empleado> listar() throws DaoException;
+    int insertar(List<Empleado> listado) throws DaoException;
 }

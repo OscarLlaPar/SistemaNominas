@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sauces.sistemanominas;
+package com.sauces.sistemanominas.modelo;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -71,7 +71,7 @@ public class SistemaNominas {
         
         while(iterador.hasNext()){
             empleado=iterador.next();
-            if (empleado.getDni().equals(dni)){
+            if (dni.equals(empleado.getDni().toString())){
                 return empleado;
             }
         }
@@ -138,7 +138,6 @@ public class SistemaNominas {
         if(empleadoDao!=null){
             List<Empleado> listado=empleadoDao.listar();
             for(Empleado e: listado){
-                this.incluirEmpleado(e);
                 if(this.incluirEmpleado(e)){
                     n++;
                 }

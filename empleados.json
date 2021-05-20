@@ -1,0 +1,19 @@
+[
+  {
+    "type": "EmpleadoFijo",
+    "salario": 1.0,
+    "dni": {
+      "dni": "12345678Z"
+    },
+    "nombre": "a"
+  },
+  {
+    "type": "EmpleadoEventual",
+    "salarioHora": 1.0,
+    "horas": 1,
+    "dni": {
+      "dni": "21742242C"
+    },
+    "nombre": "Oscar"
+  }
+]
